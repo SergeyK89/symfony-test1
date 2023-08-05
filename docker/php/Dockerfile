@@ -17,4 +17,8 @@ RUN curl -sL https://getcomposer.org/installer | php -- --install-dir /usr/bin -
 RUN curl -sS https://get.symfony.com/cli/installer | bash
 RUN mv /root/.symfony5/bin/symfony /usr/local/bin/symfony
 
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash
+RUN apt-get install -y nodejs
+RUN npm install --global yarn
+
 CMD ["php-fpm"]
